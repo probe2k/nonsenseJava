@@ -1,5 +1,6 @@
 /*
- * Code to demonstrate my power to do shit!
+ * Code prototype to be further used.
+ * Makes use of javax.swing.JPanel.updateUI() and javax.swing.JPanel.removeAll() methods
  */
 
 import javax.swing.JFrame;
@@ -12,7 +13,7 @@ import java.awt.event.ActionEvent;
 @SuppressWarnings("serial")
 public class JustBSing extends JFrame {
 	
-	// Constructor
+	// Constructor - contains class body and the JFrame container
 	public JustBSing() {
 		JButton button = new JButton("Click!");
 		JPanel panel = new JPanel();
@@ -40,7 +41,7 @@ public class JustBSing extends JFrame {
 		});
 	}
 	
-	// main() method
+	// main() method - calls the constructor inside a JFrame object
 	public static void main(String[] args) {
 		JFrame f = new JustBSing();
 		f.setVisible(true);
