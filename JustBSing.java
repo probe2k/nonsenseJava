@@ -49,3 +49,5 @@ public class JustBSing extends JFrame {
 		f.setSize(300, 300);
 	}
 }
+
+// edit to test signed commits
