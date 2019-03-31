@@ -1,23 +1,25 @@
 /*
- * Code prototype to be further used.
- * Makes use of javax.swing.JPanel.updateUI() and javax.swing.JPanel.removeAll() methods
+ * Code to demonstrate my power to do shit!
  */
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.lang.reflect.InvocationTargetException;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 
 @SuppressWarnings("serial")
-public class JustBSing extends JFrame {
+public class JustBSing {
 	
-	// Constructor - contains class body and the JFrame container
+	// Constructor
 	public JustBSing() {
+		JFrame frame = new JFrame("BS!");
 		JButton button = new JButton("Click!");
 		JPanel panel = new JPanel();
-		add(panel);
+		frame.add(panel);
 		panel.add(button);
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
@@ -39,15 +41,23 @@ public class JustBSing extends JFrame {
 				});
 			}
 		});
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		frame.setSize(300, 300);
 	}
 	
-	// main() method - calls the constructor inside a JFrame object
+	// main() method - Edit to use SwingUtilities
 	public static void main(String[] args) {
-		JFrame f = new JustBSing();
-		f.setVisible(true);
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		f.setSize(300, 300);
+		try {
+			SwingUtilities.invokeAndWait(new Runnable() {
+				public void run() {
+					new JustBSing();
+				}
+			});
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		} catch (InterruptedException exc) {
+			exc.printStackTrace();
+		}
 	}
 }
-
-// edit to test signed commits
